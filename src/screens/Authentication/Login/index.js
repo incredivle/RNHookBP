@@ -38,13 +38,13 @@ export default Login = () => {
         <Text style={styles.login}>Login Status {incCount}</Text>
       </TouchableOpacity>
 
-      {useIsFocused ? <View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }}>
+      <View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }}>
         <FlatList
           data={userList}
           renderItem={({ item }) => <Text>{item.name} - {item.email}</Text>}
           keyExtractor={item => item.id.toString()}
         />
-      </View> : null}
+      </View>
 
       <Text
         style={{ alignSelf: 'flex-end', fontSize: 33 }}
