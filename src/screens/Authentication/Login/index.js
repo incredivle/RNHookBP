@@ -43,17 +43,21 @@ export default Login = () => {
         <Text style={styles.login}>Login Status {incCount}</Text>
       </TouchableOpacity>
 
-      <Animatable.View ref={this.handleViewRef}>
-          <Text>Bounce me!</Text>
-        </Animatable.View>
+      <Animatable.View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }} ref={this.handleViewRef}>
+      <FlatList
+          data={userList}
+          renderItem={({ item }) => <Text>{item.name} - {item.email}</Text>}
+          keyExtractor={item => item.id.toString()}
+        />
+      </Animatable.View>
 
-      <View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }}>
+      {/* <View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }}>
         <FlatList
           data={userList}
           renderItem={({ item }) => <Text>{item.name} - {item.email}</Text>}
           keyExtractor={item => item.id.toString()}
         />
-      </View>
+      </View> */}
 
       <Text
         style={{ alignSelf: 'flex-end', fontSize: 33 }}
