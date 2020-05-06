@@ -9,8 +9,8 @@ import * as Animatable from 'react-native-animatable';
 
 export default Login = () => {
 
-  handleViewRef = ref => this.view = ref;
-  bounce = () => this.view.bounce(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
+  handleViewRef = ref => view = ref;
+  bounce = () => view.bounce(800).then(endState => console.log(endState.finished ? 'bounce finished' : 'bounce cancelled'));
 
   const [count, setCount] = useState(0)
 
@@ -43,7 +43,7 @@ export default Login = () => {
         <Text style={styles.login}>Login Status {incCount}</Text>
       </TouchableOpacity>
 
-      <Animatable.View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }} ref={this.handleViewRef}>
+      <Animatable.View style={{ flex: 0.5, alignSelf: 'flex-start', backgroundColor: 'yellow' }} ref={handleViewRef}>
       <FlatList
           data={userList}
           renderItem={({ item }) => <Text>{item.name} - {item.email}</Text>}
@@ -59,9 +59,12 @@ export default Login = () => {
         />
       </View> */}
 
-      <Text
+<Animatable.Text animation="slideInDown" iterationCount='infinite' direction="alternate" style={{ alignSelf: 'flex-end', fontSize: 33 }}
+        onPress={() => NavigationService.navigate('SignUp', { name: 'Ajmal Hasan' })}>NAVIGATE TO --> HOOK FORM</Animatable.Text>
+
+      {/* <Text
         style={{ alignSelf: 'flex-end', fontSize: 33 }}
-        onPress={() => NavigationService.navigate('SignUp', { name: 'Ajmal Hasan' })}>NAVIGATE TO --> HOOK FORM</Text>
+        onPress={() => NavigationService.navigate('SignUp', { name: 'Ajmal Hasan' })}>NAVIGATE TO --> HOOK FORM</Text> */}
     </View>
   );
 }
