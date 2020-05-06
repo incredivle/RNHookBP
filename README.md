@@ -1,6 +1,6 @@
 # RNHookBP {React Native Hooks Boilerplate - 2020}
 
-React Native Hooks Boilerplate is a starting point for React Native application. It is an architecture for developing React Native Apps using react native hook, react hook form, redux-thunk, react navigation v5, offline view if not connected to network, reactron for inspection etc.
+React Native Hooks Boilerplate is a starting point for React Native application. It is an architecture for developing React Native Apps using react native hook, react hook form, redux-thunk, redux-persist, react navigation v5, navigation service, react native paper, offline view if not connected to network, reactron for inspection etc.
 
 # Features!
     "@react-native-community/async-storage"
